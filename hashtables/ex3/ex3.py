@@ -1,10 +1,30 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    
+    countDict = {}
+    interesectList = []
 
-    return result
+    for i, numList in enumerate(arrays):
+        for num in numList:
+            if num in countDict:
+                if i not in countDict[num]:
+                    countDict[num].append(i)
+            else:
+                countDict[num] = [i]
+
+    for num in countDict.keys():
+
+        interesects = True; 
+
+        for i in range (len(arrays)):
+            if i not in countDict[num]:
+                interesects = False 
+
+        if interesects:
+            interesectList.append(num)
+
+
+
+    return interesectList
 
 
 if __name__ == "__main__":

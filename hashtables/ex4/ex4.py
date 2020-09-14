@@ -1,10 +1,18 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    
+    corresDict = {}
+    returnArr = []
 
-    return result
+    for num in a:
+        if num - (num + num) in a and num > 0:
+            corresDict[num] = num
+
+    for num in corresDict.keys():
+        returnArr.append(num)
+
+    
+
+    return returnArr
 
 
 if __name__ == "__main__":
